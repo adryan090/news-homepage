@@ -1,0 +1,143 @@
+.header {
+  margin-bottom: 3rem;
+  display: flex;
+  justify-content: space-between;
+  @media (min-width: 71em) {
+    margin-top: 6rem;
+    margin-bottom: 5.4rem;
+  }
+
+  .logo-container {
+    width: 4.5rem;
+    @media (min-width: 71em) {
+      width: 6.4rem;
+    }
+  }
+
+  .menu {
+    display: flex;
+    align-items: center;
+    .menu__list {
+      display: none;
+      @media (min-width: 71em) {
+        display: flex;
+        justify-content: flex-end;
+        gap: 3.8rem;
+        font-size: 1.6rem;
+        list-style-type: none;
+      }
+      .menu__link {
+        color: var(--very-dark-blue);
+        text-decoration: none;
+      }
+      .menu__link:hover {
+        color: var(--soft-red);
+      }
+    }
+    .hamburger-menu {
+      width: 4.2rem;
+      height: 3rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 4px;
+      @media (min-width: 71em) {
+        display: none;
+      }
+      .hamburger-menu__bar {
+        display: block;
+        width: 100%;
+        height: 3px;
+        background-color: black;
+        z-index: 3;
+      }
+    }
+
+    .hamburger-menu:hover {
+      cursor: pointer;
+    }
+  }
+  .mobile {
+    width: 37.5rem;
+    background-color: rgba(0, 0, 0, 0.5);
+    height: 100vh;
+    display: none;
+    position: fixed;
+    top: 0;
+    transition: all 1s;
+    transform: translateX(-1.6rem);
+
+    .mobile__list {
+      background: var(--off-white);
+      height: 100vh;
+      width: 25.5rem;
+      padding: 14.5rem 2rem;
+      list-style-type: none;
+      display: flex;
+      flex-direction: column;
+      gap: 2.7rem;
+
+      .mobile__list-item {
+        .mobile__link {
+          font-size: 1.85rem;
+          color: var(--very-dark-blue);
+          text-decoration: none;
+        }
+      }
+    }
+  }
+
+  .open-menu {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+  }
+}
+
+// Toggle button animation
+
+.animateBar1 {
+  animation: flipBar1 0.5s;
+  animation-fill-mode: forwards;
+}
+
+.animateBar2 {
+  animation: fadeBar2 0.5s;
+  animation-fill-mode: forwards;
+}
+
+.animateBar3 {
+  animation: flipBar3 0.5s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes flipBar1 {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(45deg) translate(4px, 6px);
+  }
+}
+
+@keyframes fadeBar2 {
+  from {
+    transform: scaleX(1);
+    opacity: 1;
+  }
+  to {
+    transform: scaleX(0);
+    opacity: 0;
+  }
+}
+
+@keyframes flipBar3 {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(-45deg) translate(4px, -6px);
+  }
+}

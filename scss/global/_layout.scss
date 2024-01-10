@@ -1,0 +1,25 @@
+.page {
+  display: flex;
+  justify-content: center;
+  min-height: auto;
+  .container {
+    position: relative;
+    width: 37.5rem;
+    padding: 3rem 1.6rem;
+    @media (min-width: 71em) {
+      width: 115rem;
+    }
+    .main {
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-rows: repeat(1fr, 3);
+      row-gap: 6.4rem;
+      @media (min-width: 71em) {
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: repeat(1fr, 4);
+        column-gap: 3.2rem;
+        row-gap: 7rem;
+      }
+    }
+  }
+}
